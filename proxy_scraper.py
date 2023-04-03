@@ -1,5 +1,6 @@
 import re
 import requests
+import os
 
 def scrape_proxies(url, proxies):
     try:
