@@ -42,7 +42,9 @@ jobs:
           mv socks5.txt Proxies/socks5.txt
 
       - name: Commit and push changes
-        run: |
+       run: |
+          git config --global user.name "bennettricki"
+          git config --global user.email "bennett.ricki@proton.me"
           git add Proxies/*.txt
           git commit -m "Update proxy lists"
           git push
