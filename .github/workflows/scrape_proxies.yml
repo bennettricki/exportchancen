@@ -43,8 +43,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "Your Name"
-          git config --global user.email "your.email@example.com"
+          git config --global user.name "bennettricki"
+          git config --global user.email "bennett.ricki@proton.me"
           git add Proxies/*.txt
           git commit -m "Update proxy lists"
           git push
