@@ -1,0 +1,50 @@
+name: Scrape Proxies
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run every hour
+
+jobs:
+  scrape_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Scrape proxies
+        env:
+          IPROYAL: ${{ secrets.IPROYAL }}
+          HTTPS_URL: ${{ secrets.HTTPS_URL }}
+          HTTP_URL: ${{ secrets.HTTP_URL }}
+          SOCKS4_URL: ${{ secrets.SOCKS4_URL }}
+          SOCKS5_URL: ${{ secrets.SOCKS5_URL }}
+        run: python proxy_scraper.py
+
+      - name: Create Proxies folder if not exists
+        run: mkdir -p Proxies
+
+      - name: Move files to Proxies folder
+        run: |
+          mv https.txt Proxies/https.txt
+          mv http.txt Proxies/http.txt
+          mv socks4.txt Proxies/socks4.txt
+          mv socks5.txt Proxies/socks5.txt
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your.email@example.com"
+          git add Proxies/*.txt
+          git commit -m "Update proxy lists"
+          git push
