@@ -2,8 +2,8 @@ name: Scrape Proxies
 
 on:
   workflow_dispatch: # Add this line to enable manual triggering
-  schedule:
-    - cron: '0 * * * *' # Run every hour
+ # schedule:
+   # - cron: '0 * * * *' # Run every hour
 
 jobs:
   scrape_and_push:
