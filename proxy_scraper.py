@@ -61,9 +61,20 @@ def check_risk_level(proxy, proxy_type):
 
 def main():
     urls = {
-        'http': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt'],
-        'socks4': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt'],
-        'socks5': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt']
+        'http': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt',
+                'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/http.txt',
+                'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/https.txt',
+                'https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/http.txt',
+                'https://github.com/zloi-user/hideip.me/raw/main/http.txt',
+                'https://github.com/zloi-user/hideip.me/raw/main/https.txt'],
+        'socks4': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt',
+                  'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/socks4.txt',
+                  'https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks4.txt',
+                  'https://github.com/zloi-user/hideip.me/raw/main/socks4.txt'],
+        'socks5': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt',
+                  'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/socks5.txt',
+                  'https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks5.txt',
+                  'https://github.com/zloi-user/hideip.me/raw/main/socks5.txt']
     }
 
     all_proxies = defaultdict(set)
