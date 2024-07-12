@@ -61,10 +61,18 @@ def check_risk_level(proxy, proxy_type):
 
 def main():
     urls = {
-        'http': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt'
-                ],
-        'socks4': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt'],
-        'socks5': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt']
+        'http': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt',
+                 'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/https.txt',
+                'https://raw.githubusercontent.com/ALIILAPRO/Proxy/main/http.txt',
+                'https://raw.githubusercontent.com/ProxyScraper/ProxyScraper/main/http.txt'],
+        'socks4': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt',
+                  'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/socks4.txt',
+                  'https://raw.githubusercontent.com/ALIILAPRO/Proxy/main/socks4.txt',
+                  'https://raw.githubusercontent.com/ProxyScraper/ProxyScraper/main/socks4.txt'],
+        'socks5': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt',
+                  'https://raw.githubusercontent.com/vakhov/fresh-proxy-list/master/socks5.txt',
+                  'https://raw.githubusercontent.com/ALIILAPRO/Proxy/main/socks5.txt',
+                  'https://raw.githubusercontent.com/ProxyScraper/ProxyScraper/main/socks5.txt']
     }
 
     all_proxies = defaultdict(set)
