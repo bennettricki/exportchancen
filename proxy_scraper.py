@@ -61,13 +61,10 @@ def check_risk_level(proxy, proxy_type):
 
 def main():
     urls = {
-        'http': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt',
-                'https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/http.txt'
+        'http': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt'
                 ],
-        'socks4': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt',
-                  'https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks4.txt'],
-        'socks5': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt',
-                  'https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks5.txt']
+        'socks4': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt'],
+        'socks5': ['https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt']
     }
 
     all_proxies = defaultdict(set)
